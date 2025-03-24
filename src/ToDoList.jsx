@@ -91,7 +91,7 @@ const ToDoList = () => {
               className={task.completed ? "completed" : ""}
               style={{ display: "flex", justifyItems: "center" }}
             >
-              <div>
+              <div className="flex mb-4 items-center">
                 <input
                   type="checkbox"
                   checked={task.completed}
@@ -101,30 +101,30 @@ const ToDoList = () => {
               {editIndex === index ? (
                 <div className="flex mb-4 items-center">
                   <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-grey-darker"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 ml-4 mr-2 text-grey-darker"
                     type="text"
                     value={editedTask}
                     onChange={(event) => setEditedTask(event.target.value)}
                   />
                   <button
                     onClick={saveTask}
-                    className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-green-500 text-green border-green hover:bg-green"
+                    className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-green-500 text-green border-green hover:bg-green-100"
                   >
                     Save
                   </button>
                 </div>
               ) : (
                 <div className="flex mb-4 items-center">
-                  <p className="text">{task.text}</p>
+                  <p className="ml-4 mr-2">{task.text}</p>
                   <button
                     onClick={() => editTask(index)}
-                    className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-amber-500 text-green border-green hover:bg-green"
+                    className="flex-no-shrink p-2 ml-4 mr-2 border-2 rounded hover:text-amber-500 text-green border-green hover:bg-amber-100"
                   >
                     Edit
                   </button>
                   <button
                     onClick={() => deleteTask(index)}
-                    className="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-red-700 hover:bg-red"
+                    className="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red hover:text-red-700 hover:bg-red-100"
                   >
                     Delete
                   </button>
